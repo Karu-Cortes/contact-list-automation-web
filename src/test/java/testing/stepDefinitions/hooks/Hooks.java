@@ -3,8 +3,8 @@ package testing.stepDefinitions.hooks;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import org.junit.After;
-import org.junit.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 
 import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;

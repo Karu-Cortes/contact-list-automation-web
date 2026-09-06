@@ -7,8 +7,8 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/features/",
-        tags = "",
-        glue = { "testing.stepdefinitions" },
+        tags = "@CreacionExitosa",
+        glue = { "testing.stepDefinitions" },
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class CucumberTestSuite {
