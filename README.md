@@ -27,7 +27,7 @@ src
 │           ├── commons       
 └── resources
 ├── features      # Escenarios Gherkin
-│   └── home.feature
+│   └── addUser.feature # Registro de usuarios
 ├── serenity.conf
 ├── 
 ├── 
