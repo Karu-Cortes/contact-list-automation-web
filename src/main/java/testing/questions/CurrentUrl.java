@@ -14,6 +14,7 @@ public class CurrentUrl implements Question<Boolean> {
 
     private static final String CONTACT_LIST_PATH = "/contactList";
     private static final String ADD_USER_PATH = "/addUser";
+    private static final String ADD_CONTACT_PATH = "/addContact";
     private final String expectedPath;
 
     private CurrentUrl(String expectedPath) {
@@ -26,6 +27,10 @@ public class CurrentUrl implements Question<Boolean> {
 
     public static CurrentUrl isAddUser() {
         return new CurrentUrl(ADD_USER_PATH);
+    }
+
+    public static CurrentUrl isAddContact() {
+        return new CurrentUrl(ADD_CONTACT_PATH);
     }
 
     @Override

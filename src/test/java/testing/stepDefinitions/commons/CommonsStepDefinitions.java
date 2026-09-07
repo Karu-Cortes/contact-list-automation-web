@@ -6,9 +6,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import testing.questions.ValidationMessage;
 import testing.questions.CurrentUrl;
-import testing.tasks.ClickButtonSignUp;
-import testing.tasks.ClickButtonSubmit;
-import testing.tasks.OpenPage;
+import testing.tasks.*;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -17,8 +15,8 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class CommonsStepDefinitions {
 
-    @Given("el usuario se encuentra en el formulario de registro {string}")
-    public void elUsuarioSeEncuentraEnElFormularioDeRegistro(String string) {
+    @Given("el usuario se encuentra en el formulario de registro Add User")
+    public void elUsuarioSeEncuentraEnElFormularioDeRegistroAddUser() {
         theActorCalled("User").wasAbleTo(OpenPage.open());
         theActorInTheSpotlight().attemptsTo(
                 ClickButtonSignUp.clickOn()
@@ -56,6 +54,14 @@ public class CommonsStepDefinitions {
     public void deberiaPermanecerEnElFormularioAddUser() {
         theActorInTheSpotlight().should(
                 seeThat(CurrentUrl.isAddUser(), equalTo(true))
+        );
+    }
+
+    @Given("el usuario se encuentra en el formulario de registro Add a new contact")
+    public void elUsuarioSeEncuentraEnElFormularioDeRegistroAddANewContact() {
+        theActorCalled("User").attemptsTo(
+                LoginWithTestCredentials.login(),
+                ClickButtonNewContact.clickOn()
         );
     }
 }

@@ -2,7 +2,7 @@
 Feature: Registro de usuarios
 
   Background:
-    Given el usuario se encuentra en el formulario de registro "Add User"
+    Given el usuario se encuentra en el formulario de registro Add User
 
 
   @TC_001 @ValidacionesRegistro
