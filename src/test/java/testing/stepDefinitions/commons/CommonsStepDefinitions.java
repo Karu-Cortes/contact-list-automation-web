@@ -3,6 +3,8 @@ package testing.stepDefinitions.commons;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
+import testing.questions.ValidationMessage;
 import testing.questions.CurrentUrl;
 import testing.tasks.ClickButtonSignUp;
 import testing.tasks.ClickButtonSubmit;
@@ -22,6 +24,25 @@ public class CommonsStepDefinitions {
                 ClickButtonSignUp.clickOn()
         );
 
+    }
+
+    @Given("el usuario se encuentra en la página de inicio de sesión")
+    public void elUsuarioSeEncuentraEnLaPaginaDeInicioDeSesion() {
+        theActorCalled("User").wasAbleTo(OpenPage.open());
+    }
+
+    @Then("debería visualizar el mensaje de validación {string}")
+    public void deberiaVisualizarElMensajeDeValidacion(String mensaje) {
+        theActorInTheSpotlight().should(
+                seeThat(ValidationMessage.text(), equalTo(mensaje))
+        );
+    }
+
+    @Then("debería ser redirigido a la página Contact List")
+    public void deberiaSerRedirigidoALaPaginaContactList() {
+        theActorInTheSpotlight().should(
+                seeThat(CurrentUrl.isContactList(), equalTo(true))
+        );
     }
 
     @When("el usuario envía el formulario de registro")
