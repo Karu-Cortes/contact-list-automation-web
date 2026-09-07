@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/features/",
-        tags = "@CreacionExitosa",
+        tags = "@CreacionDuplicada",
         glue = { "testing.stepDefinitions" },
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )

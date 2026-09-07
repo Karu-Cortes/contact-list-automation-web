@@ -32,4 +32,8 @@ public class AddUserPage {
             .the("boton para cancelar la creación de usuario")
             .locatedBy("//button[@id='cancel']");
 
+    public static final Target SPAN_ERROR = Target
+            .the("mensaje de error")
+            .locatedBy("//span[@id='error']");
+
 }
