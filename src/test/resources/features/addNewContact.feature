@@ -4,7 +4,7 @@ Feature: Registro de contactos
   Background:
     Given el usuario se encuentra en el formulario de registro Add a new contact
 
-  @TC_006 @ValidacionesContacto
+  @TC_012 @ValidacionesContacto
   Scenario Outline: Mostrar el mensaje de error al registrar un contacto sin nombre o apellido
     When el usuario completa el formulario de contacto con los siguientes datos:
       | firstName | lastName   | birthdate    | email    | phone      | street1      | street2      | city     | stateProvince | postalCode     | country |
@@ -18,7 +18,7 @@ Feature: Registro de contactos
       |        | Riaño    | 1990-05-15 | LorenaR@test.com | 3001234567 | Calle 123 #45 | Apto 201   | Bogota | Bogota DC | 110111       | Colombia | Contact validation failed: firstName: Path `firstName` is required. |
       | Lorena |          | 1990-05-15 | LorenaR@test.com | 3001234567 | Calle 123 #45 | Apto 201   | Bogota | Bogota DC | 110111       | Colombia | Contact validation failed: lastName: Path `lastName` is required.   |
 
-  @TC_008 @ValidacionesFormatoContacto
+  @TC_013 @ValidacionesFormatoContacto
   Scenario Outline: Rechazar el registro de un contacto cuando la fecha de nacimiento o el correo tienen un formato inválido
     When el usuario completa el formulario de contacto con los siguientes datos:
       | firstName | lastName | birthdate    | email    | phone      | street1       | street2  | city   | stateProvince | postalCode | country  |
@@ -35,7 +35,7 @@ Feature: Registro de contactos
       | 15/05/1990 | LorenaR@test.com | Contact validation failed: birthdate: Birthdate is invalid |
       | 1990-05-15 | prueba           | Contact validation failed: email: Email is invalid         |
 
-  @TC_007 @CreacionContactoExitosa
+  @TC_014 @CreacionContactoExitosa
   Scenario Outline: Registrar un contacto utilizando datos válidos
     When el usuario completa el formulario de contacto con los siguientes datos:
       | firstName | lastName   | birthdate    | email    | phone      | street1      | street2      | city     | stateProvince | postalCode     | country |
