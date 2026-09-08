@@ -5,7 +5,7 @@ Feature: inicio de sesión
     Given el usuario se encuentra en la página de inicio de sesión
 
 
-  @TC_004 @InicioSesionFallido
+  @TC_010 @InicioSesionFallido
   Scenario: Iniciar sesión con credenciales inválidas
     When el usuario completa el formulario de inicio de sesión con los siguientes datos:
       | email                 | password      |
@@ -13,7 +13,7 @@ Feature: inicio de sesión
     And el usuario envía el formulario de inicio de sesión
     Then debería visualizar el mensaje de validación "Incorrect username or password"
 
-  @TC_005 @InicioSesionExitoso
+  @TC_011 @InicioSesionExitoso
   Scenario: Iniciar sesión con credenciales válidas
     When el usuario completa el formulario de inicio de sesión con los siguientes datos:
       | email                 | password      |
