@@ -26,16 +26,16 @@ Feature: Registro de usuarios
   @TC_002 @CreacionExitosa
   Scenario: Registrar un usuario utilizando datos válidos
     When el usuario completa el formulario de registro con los siguientes datos:
-      | firstName | lastName | email                 | password      |
-      | Pablo     | Rojas    | Pablo.rojas1@test.com | testPablo1234 |
+      | firstName | lastName | email                  | password      |
+      | Pablo     | Rojas    | Pablo3.rojas1@test.com | testPablo1234 |
     And el usuario envía el formulario de registro
     Then debería ser redirigido a la página Contact List
 
   @TC_003 @CreacionDuplicada
   Scenario: Rechazar el registro utilizando un correo previamente registrado.
     When el usuario completa el formulario de registro con los siguientes datos:
-      | firstName | lastName | email                 | password      |
-      | Pablo     | Rojas    | Pablo.rojas1@test.com | testPablo1234 |
+      | firstName | lastName | email                  | password      |
+      | Pablo     | Rojas    | Pablo3.rojas1@test.com | testPablo1234 |
     And el usuario envía el formulario de registro
     Then debería visualizar el mensaje de validación "Email address is already in use"
     And debería permanecer en el formulario Add User
