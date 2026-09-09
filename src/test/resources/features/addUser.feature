@@ -27,7 +27,7 @@ Feature: Registro de usuarios
   Scenario: Registrar un usuario utilizando datos válidos
     When el usuario completa el formulario de registro con los siguientes datos:
       | firstName | lastName | email                  | password      |
-      | Pablo     | Rojas    | Pablo3.rojas1@test.com | testPablo1234 |
+      | Pablo     | Rojas    | correo_unico_registro  | testPablo1234 |
     And el usuario envía el formulario de registro
     Then debería ser redirigido a la página Contact List
 
@@ -35,9 +35,8 @@ Feature: Registro de usuarios
   Scenario: Rechazar el registro utilizando un correo previamente registrado.
     When el usuario completa el formulario de registro con los siguientes datos:
       | firstName | lastName | email                  | password      |
-      | Pablo     | Rojas    | Pablo3.rojas1@test.com | testPablo1234 |
+      | Pablo     | Rojas    | correo_unico_registro  | testPablo1234 |
     And el usuario envía el formulario de registro
     Then debería visualizar el mensaje de validación "Email address is already in use"
     And debería permanecer en el formulario Add User
-
 
