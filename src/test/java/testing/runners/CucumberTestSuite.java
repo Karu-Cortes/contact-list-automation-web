@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",
         tags = "",
         glue = { "testing.stepDefinitions" },
+        plugin = { "pretty" },
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class CucumberTestSuite {
 }
-
